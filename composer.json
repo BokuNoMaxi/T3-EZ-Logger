@@ -19,7 +19,7 @@
     },
     "autoload": {
       "psr-4": {
-        "BokuNo\\T3EZLogger": "Classes"
+        "BokuNo\\T3EZLogger\\": "Classes"
       }
     },
     "extra": {
