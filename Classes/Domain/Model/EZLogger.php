@@ -9,8 +9,8 @@ class EZLogger {
     private $varPath;
 
     function __construct(string $filename = "ez-logging.log") {
-        $this->openFileWriter($filename);        
-        $this->varPath = Enviroment::getVarPath()."log/";
+        $this->varPath = Environment::getVarPath()."/log/";
+        $this->openFileWriter($this->varPath.$filename);
     }
 
     public function writeLog (string $msg){
