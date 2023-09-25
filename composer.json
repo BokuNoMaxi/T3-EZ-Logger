@@ -1,0 +1,31 @@
+{
+    "name": "bokuno/t3-ez-logger",
+    "description": "Sometimes you just need a little workaround to debug your code",
+    "keywords": [
+      "typo3",
+      "Logger"
+    ],
+    "homepage": "https://github.com/BokuNoMaxi/T3-EZ-Logger",
+    "authors": [
+      {
+        "name": "Markus Ketterer",
+        "email": "4tmestorage@gmail.com"
+      }
+    ],
+    "type": "typo3-cms-extension",
+    "license": "GPL-2.0-or-later",
+    "replace": {
+      "typo3-ter/t3ezlogger": "self.version"
+    },
+    "autoload": {
+      "psr-4": {
+        "BokuNo\\T3EZLogger": "Classes"
+      }
+    },
+    "extra": {
+      "typo3/cms": {
+        "extension-key": "t3ezlogger"
+      }
+    }
+  }
+  
