@@ -7,15 +7,18 @@ class EZLogger {
 
     private $fileWriter;
     private $varPath;
+    private $timestamp;
 
     function __construct(string $filename = "ez-logging.log") {
         $this->varPath = Environment::getVarPath()."/log/";
         $this->openFileWriter($this->varPath.$filename);
+
+        $this->timestamp = date('Y-m-d H:i:s');
     }
 
     public function writeLog (string $msg){
         try {
-            fwrite($this->fileWriter,$msg);
+            fwrite($this->fileWriter,$this->timestamp.": ". $msg);
         } catch (\Throwable $th) {
             //throw $th;
         }
@@ -25,7 +28,7 @@ class EZLogger {
     }
 
     public function openFileWriter ($filename){
-        $this->fileWriter = fopen($filename,"w");
+        $this->fileWriter = fopen($filename, "a");
     }
 
     public function closeFileWriter (){
