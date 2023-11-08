@@ -1,0 +1,2 @@
+# cat=Logger; type=boolean; label=Activate Logging
+activateLog =
