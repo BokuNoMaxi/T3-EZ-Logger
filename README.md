@@ -32,4 +32,4 @@ Because when I need to debug strange things in production, I don't want to flood
 ##TODO:
 - Scheduler to remove log after n days
 - Send Mail Function to directly send your log via mail to predefined mail address
-- Timestamp to prepend to log file?
+- ~~Timestamp to prepend to log file?~~
