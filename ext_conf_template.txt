@@ -1,8 +1,8 @@
 # cat=Logger; type=boolean; label=Activate Logging
 activateLog =
 
-# cat=Logger; type=string; label=E-Mail: Default Receiver
+# cat=Logger; type=string; label=E-Mail Receiver: Default Receiver Mail Adress used if not set in the function call
 mailReceiver =
 
-# cat=Logger; type=string; label=E-Mail: Default Sender 
+# cat=Logger; type=string; label=E-Mail Sender: Default Sender Mail Adress used if not set in the function call
 mailSender =
