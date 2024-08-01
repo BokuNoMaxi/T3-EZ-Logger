@@ -24,7 +24,7 @@ class EZLogger
     $this->openFileWriter($filename, $prependDateTime);
   }
 
-  public function writeLog(array|string $msg, bool $newLine = 1)
+  public function writeLog(array|string $msg, bool $newLine = TRUE)
   {
     if ($this->extensionConfiguration["activateLog"] == "1") {
       try {
