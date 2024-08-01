@@ -2,8 +2,9 @@
 Sometimes you just need a little workaround to debug your code
 
 ## Install
+```
 composer req bokuno/t3-ez-logger
-
+```
 ## How to use this logger
 The logger needs to be activated to write into the log file. So you can easily de-/activate this feature without installing and removing the extension.
 
