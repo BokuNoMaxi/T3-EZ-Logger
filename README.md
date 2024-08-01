@@ -25,6 +25,10 @@ just add "true" to constructor to prepend the current date in format "Ymd" to th
 $ezlogger = new EZLogger("filename.log",true);
 ```
 
+### toggle logging
+sometimes you don't want to flood your server with logs, or you log to much and have performance problems, so I made an option to easily toggle if ezlogger writes into the log or not:
+![Toggle Log](Documentation/Images/ToggleLog.png)
+
 
 ## But why ? I can log directly via \TYPO3\CMS\Core\Log\LogManager
 
