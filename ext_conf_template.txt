@@ -1,2 +1,8 @@
 # cat=Logger; type=boolean; label=Activate Logging
 activateLog =
+
+# cat=Logger; type=string; label=E-Mail: Default Receiver
+mailReceiver =
+
+# cat=Logger; type=string; label=E-Mail: Default Sender 
+mailSender =
