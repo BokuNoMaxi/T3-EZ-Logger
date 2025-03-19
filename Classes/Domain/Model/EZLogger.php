@@ -2,10 +2,10 @@
 
 namespace BokuNo\T3EZLogger\Domain\Model;
 
+use RuntimeException;
 use Symfony\Component\Mime\Address;
 use TYPO3\CMS\Core\Core\Environment;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
-use TYPO3\CMS\Extbase\Utility\DebuggerUtility;
 use TYPO3\CMS\Core\Configuration\ExtensionConfiguration;
 use TYPO3\CMS\Core\Mail\MailMessage;
 
@@ -13,8 +13,11 @@ use TYPO3\CMS\Core\Mail\MailMessage;
 class EZLogger
 {
   private $fileWriter;
+
   private string $varPath;
+
   private string $timestamp;
+
   private $extensionConfiguration;
 
   public function __construct(
@@ -41,7 +44,7 @@ class EZLogger
           fwrite($this->fileWriter, $this->timestamp . ": " . print_r($msg, true));
           $this->addNewLine($newLine);
         } else {
-          throw new Exception('Invalid variable type for $msg');
+          throw new RuntimeException('Invalid variable type for $msg');
         }
     }
   }
@@ -63,10 +66,12 @@ class EZLogger
     if ($prependDateTime) {
       $filename = date("Ymd_") . $filename;
     }
+
     $mode = "w";
     if ($this->attachToLogfile) {
       $mode = "a";
     }
+
     $this->fileWriter = fopen($this->varPath . $filename, $mode);
   }
 
@@ -87,6 +92,7 @@ class EZLogger
       ($to || $this->extensionConfiguration["mailReceiver"])
     ) {
       $to = $to ?: $this->extensionConfiguration["mailReceiver"];
+      /** @var MailMessage $mail */
       $mail = GeneralUtility::makeInstance(MailMessage::class);
       $mail
         ->setSubject($subject ?? 'Report from EZ Logger')
@@ -102,6 +108,7 @@ class EZLogger
 
       return $mail->send();
     }
+
     return false;
   }
 }
